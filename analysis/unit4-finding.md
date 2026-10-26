@@ -1,6 +1,6 @@
 ## Dashboard Team
 
-# Rental Marketplace Findings - 4
+# Rental Marketplace Findings - 4-3
 
 The rental Marketplace recorded 200 viewing vents, of which 34 were cancelled, resulting in an overall failure rate of 17%.  Of that 17% failure rate in total from the top 12 producers(properties) property 11 was the highest at 31.25 % and property number 9 was at 28.57%.  At the low end of the failure rate order we had property 10 at 0.0% and property 8 at 5.00%.  All the failure rates were calculated on cancelled views as that gave us a better breakdown of the data per viewing events.  
 

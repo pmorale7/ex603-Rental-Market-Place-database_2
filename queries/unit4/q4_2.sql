@@ -84,7 +84,43 @@ ORDER BY
     properties.city;
 
 
--- Task 4.2 - Part C
+
+
+-- Task 4.2 - Part C total counts
+-- this pulls the total high volume properties
+-- and total events. to returen our 16.49% 
+-- failure rate
+
+
+WITH property_performance AS (
+    SELECT
+        property_id,
+        COUNT(*) AS total_events,
+        SUM(
+            CASE
+                WHEN viewing_status = 'cancelled'
+                    THEN 1
+                ELSE 0
+            END
+        ) AS failed_events
+    FROM viewings
+    GROUP BY property_id
+)
+
+SELECT
+    COUNT(*) AS high_volume_properties,
+    SUM(total_events) AS total_events,
+    SUM(failed_events) AS total_failures,
+    ROUND(
+        100.0 * SUM(failed_events) / SUM(total_events),
+        2
+    ) AS baseline_failure_rate
+FROM property_performance
+WHERE total_events >= 10;
+
+
+
+-- Task 4.2 - Part C - failure rate and event breakdown
 -- What is the individual performance of each producer - listed
 -- by property id, shows total events, what failed(cancelled)
 -- percentages listed.
@@ -115,5 +151,4 @@ SELECT
 FROM property_performance
 WHERE total_events >= 10
 ORDER BY failure_rate DESC;
-
 

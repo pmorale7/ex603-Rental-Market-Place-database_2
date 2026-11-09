@@ -1,1 +1,5 @@
-SQL queries for Unit 5
+## SQL queries for Unit 5
+
+The features or report that can be used the viewing activity report as it uses a three-table join to show who is viewing properties and when the viewing occur.  The report would have the renter, viewing, and the property tables to display the renter's name, the property they viewed, and the data and time of that viewing.  This would help management monitor viewing activity and understand which renters are viewing which properties.
+
+The junction table for the amenities is important because it connects properties to their amenities provided.  A property can have many amenities, and the same amenity can belong to many properties, which would essentially create a many to many relationship.  The junction table gave us insight on which amenities were associated with the high failure properties from assignment 4.  Without this I was not able to make the direct connection to properties on multiple amenities, which would make it difficult to determine if the high failure rate properties shared any common characteristics.

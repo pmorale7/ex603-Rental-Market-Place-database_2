@@ -65,3 +65,61 @@ SELECT
 -- much for leadership to look at instead of just showing each property 
 -- with it listed amenity, which would be an easier viewing. 
 -- #####################################################
+
+
+-- Task 5.3 - B Examine Query Execution Plan
+
+Q1
+-- Capture the full execution plan:
+-- screenshot will be places within th e screenshots folder for this query
+
+Q2
+-- Identify the join algorithm or algorithms used, such as Nested Loop, Hash Join, or Merge Join.
+-- I see Hash Join, Has Cond: (v.renter_id = r.renter_id), that is the viewings to renters
+-- a Nested loop also where the total 200 properties set to be connected it shows. 
+-- it also uses a  index scan on the properties using pk on property id
+-- to match properties.  
+-- is it cached in memory as well
+
+Q3 
+-- Explain why PostgreSQL may have selected these algorithms, considering table sizes and available indexes.
+-- It is a small dataset to use on the viewings and properties, and renters.
+-- the hash join is efficient to use to build a small hash table from the renters quickly.
+-- uses the property id postgres can be efficient for each viewing on the look up quickly.
+-- memoize makes this quicker and more efficient because it can reference it at this point the same 
+-- property. and cache the findings. 
+
+Q4
+-- Predict which part of the query might become less efficient as the dataset grows.
+-- with only 200 sets to views, now if the dataset grew to 100,000 or 1, 000,000 
+-- the dataset will have many more records to join and sort.  the efficienciy gets less
+-- important and processing power becomes expensive.  For nested loop it would have more records
+-- as it increases costing more.  There may be a different way to execute this query.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

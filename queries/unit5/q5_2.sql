@@ -114,10 +114,12 @@ ORDER BY
     v.property_id,
     v.attended_at;
 
--- Task 5.2 - Part B - 3
+-- Task 5.2 - Part B - 3 & 4
 -- Which records are unmatched on either side of the FULL OUTER JOIN?
 -- this shows two records unmatched and both show NULL
 -- Property 14 and 15
+-- this sql verifies the unmatched records that 
+-- both Left join or right join alone cannot
 
 SELECT
     p.property_id,
@@ -130,6 +132,37 @@ FULL OUTER JOIN viewings AS v
 WHERE p.property_id IS NULL
    OR v.viewing_id IS NULL
 ORDER BY p.property_id, v.property_id;
+
+
+-- Task 5.2 - Part B - 4
+-- A full outer join can reveal unmatched recoredsd from both
+-- tables at the same time. In our results, we show properties 14 and 15
+-- as properties with no matching viewing events.  It also allowed
+-- us to check for viewing events that had no matching property, but none were 
+-- found.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

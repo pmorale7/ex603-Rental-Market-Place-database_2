@@ -4,7 +4,7 @@ The features or report that can be used the viewing activity report as it uses a
 
 The junction table for the amenities is important because it connects properties to their amenities provided.  A property can have many amenities, and the same amenity can belong to many properties, which would essentially create a many to many relationship.  The junction table gave us insight on which amenities were associated with the high failure properties from assignment 4.  Without this I was not able to make the direct connection to properties on multiple amenities, which would make it difficult to determine if the high failure rate properties shared any common characteristics.
 
-# Task 5.1 (A | B | C)
+# Task 5.2 (A | B | C)
 
 The first question and sql code which was an inner join excluded both property 14 and property 15.  The were not in the total set due to not having any views or viewing events on the viewing table.
 

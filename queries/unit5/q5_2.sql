@@ -142,11 +142,51 @@ ORDER BY p.property_id, v.property_id;
 -- found.
 
 
+-- Task 5.2 - Part C
+-- NOT EXISTS: Which properties have never had a viewing event?
+-- property 14 & 15
+-- this query gives us all properties in total
+
+SELECT
+    p.property_id,
+    p.property_label
+FROM properties AS p
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM viewings AS v
+    WHERE v.property_id = p.property_id
+)
+ORDER BY p.property_id;
 
 
 
+-- Task 5.2 - Part C
+-- EXCEPT: Which properties have never had a viewing event?
+-- shows the same property 14 & 15
+-- this query subtracts all properties that have viewing only
 
+SELECT
+    p.property_id,
+    p.property_label
+FROM properties AS p
 
+EXCEPT
+
+SELECT
+    p.property_id,
+    p.property_label
+FROM properties AS p
+INNER JOIN viewings AS v
+    ON p.property_id = v.property_id
+
+ORDER BY property_id;
+
+-- ####################################
+-- NOT EXIST - checks all properties to determine whether a matching viewing record
+-- exists. while EXCEPT - subtracts the properties that have a viewing event from 
+-- the complete set of properties.  Both approaches pulled the same data 
+-- of the two properties 14 & 15
+-- ###################################
 
 
 

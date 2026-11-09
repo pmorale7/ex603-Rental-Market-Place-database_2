@@ -21,3 +21,14 @@ Leadership can determine if both 14 and 15 property set are available, correctly
 
 
 # Task 5.3 Understand Join Performance and Execution Plans
+
+A cartesian product could be useful on my rental marketplace if I wanted to calculate every possible combination from the properties and amenities tables.  The cross join combined the 5 amenities and 15 properties calling for 75 total combinations.  This could be used for every possible assigned or missing amenities to every properties.  This is why is may be useful to use. 
+
+The algorithms used for postgres were two of them of them.  The hash join to connect the viewings and renters tables using the renter id.  Then the nested loop to connect those results to the properties table using the property id.  The execution plan showed an index scan on the properties pk and memoize to cache it all for reference on look up later on. 
+
+The execution plan shows that viewings table had 200 rows and renters table had 100 rows. The choice to use scans on those small tables and a hash join to match their renter id values.  The properties table showed an index scan using the properties pk and memoize to repeat property lookup.  This is why postgressql used them due to table estimates, and estimated costs.
+
+Understanding why the join algorithms helps use determine how postgresql processes a query and to see if as the dataset grows will it continue to remain efficient.  It can help find and show performance problems, like repeated lookups, or whether indexes, queries, or other database improvements may be needed as more viewing data is added.
+
+As this rental marketplace grows, the viewing table could increase from hundreds of records to thousands or millions as stated before.  At scale, postgressql may chose something else and no longer support using nested loops. It can chose a different join or merge.  Anything this is addition to a dataset there is always a change on how to execute it queries and the cost attached to it.
+

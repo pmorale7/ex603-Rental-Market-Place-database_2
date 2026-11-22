@@ -16,7 +16,7 @@ A plain SUM tells us the total number of viewing events for the entire period, b
 
 I chose the seven row moving average to smooth out short term changes in viewing activity while still shoiwng recent trends.  Seven rows provide more context than looking at a single activty date without allowing older activity to dominate the result.  Because our data does not contain viewing events on every calendar date, seven rows do not necessarily represent seven consecutive days.  A larger window would produce a smoother long-term trend, while a smaller window would react more quickly to short term changes
 
-A gap means a property had no recorded viewing event for a period of time and then viewing activity resumed.   We need to investigate whether the property was unavailable or inactive during that period, whether renters simply scheudled no viewings, or whether viewing records were missing.  therefore, the gap should be treated as an item requiring further invesigation rather than automatically classifield as a platform or data quailty problem.
+A gap means a property had no recorded viewing event for a period of time and then viewing activity resumed.   We need to investigate whether the property was unavailable or inactive during that period, whether renters simply scheudled no viewings, or whether viewing records were missing.  therefore, the gap should be treated as an item requiring further invesigation rather than automatically classifield as a platform or data quailty problem.  As I looked at the query again property 9 had 113 days between recorded viewing events.   first on january 5, 2023 and next was April 28, 2023.  
 
 
 

@@ -28,7 +28,15 @@ On a month to month change in the failure rate signals that viewing performance 
 
 
 
+## Reflection
 
+Window functions made it possible to analyze the Rental Marketplace while keeping the individual viewing events visible. One useful reporting question is: **How does the duration of each viewing compare with the average viewing duration for that property?**
+
+Using `AVG(duration_min) OVER (PARTITION BY property_id)`, I was able to keep every viewing event in the results while displaying the property's average duration beside it. This made it easy to identify individual viewings that were much shorter or longer than what was typical for that property. Our window-function query returned all 200 viewing events, allowing each event to be compared with its property average.
+
+A traditional `GROUP BY property_id` answered a different question. It calculated the average duration for each property but reduced the results to only 13 rows. The individual viewing records disappeared, so it was no longer possible to see which specific viewing was above or below the property average.
+
+This demonstrated an important difference between aggregation and window functions. `GROUP BY` is useful when the goal is to summarize data, while window functions are more useful when the analysis requires both the individual records and information calculated across a larger group. For this marketplace, that makes window functions especially useful for performance monitoring and identifying unusual viewing activity.
 
 
 

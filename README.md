@@ -155,7 +155,13 @@ The month-over-month analysis showed that the platform's failure rate decreased 
 **Recommendation:** Leadership should focus next quarter on reducing month-to-month volatility. Large increases in cancellation rates should trigger a review of the affected properties and viewing events so that problems can be identified and addressed before they continue into later months.
 
 
+## Limitations and Future Improvements
 
+One limitation of this analysis is that the dataset can identify unusual marketplace activity but does not always provide enough information to determine its cause. For example, the analysis identified properties with high cancellation rates, properties with no viewing activity, and properties with long gaps between viewing events. However, the available data cannot fully explain why these conditions occurred.
+
+Future analysis would benefit from additional operational information such as detailed cancellation reasons, property availability history, listing changes, pricing history, renter feedback, and marketing activity. This information could help determine whether poor performance is caused by the listing itself, scheduling problems, renter behavior, pricing, or other marketplace conditions.
+
+A larger dataset covering a longer period would also make it possible to determine whether the monthly changes identified in this project represent long-term trends or short-term fluctuations.
 
 
 

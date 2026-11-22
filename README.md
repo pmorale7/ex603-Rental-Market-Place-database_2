@@ -73,7 +73,38 @@ The database structure and DDL were provided as part of the Unit 3 dataset and w
 
 
 
+## Query Catalogue
 
+The SQL analysis developed throughout the course progresses from basic database exploration to performance analysis, joins, execution plans, and window-function reporting.
+
+### Unit 4 — Platform Performance
+
+| Query | Business Question |
+|---|---|
+| `q4_1.sql` | How much viewing activity exists on the platform, and how do viewing counts and average durations vary by property and city? |
+| `q4_2.sql` | Which properties have the highest cancellation rates, and how does their performance compare with the platform baseline? |
+
+Unit 4 established the primary performance measures used later in the project. A cancelled viewing was defined as a failed event, and properties with at least 10 viewing events were analyzed individually.
+
+### Unit 5 — Connecting and Finding Missing Data
+
+| Query | Business Question |
+|---|---|
+| `q5_1.sql` | Who is behind each viewing event, what amenities are associated with high-failure properties, and how do similar properties compare? |
+| `q5_2.sql` | Which properties have never had a viewing event, and what information is lost when only matching records are reported? |
+| `q5_3.sql` | How do Cartesian products and PostgreSQL execution plans affect query results and performance? |
+
+Unit 5 connected viewing activity with renters, properties, and amenities. It also identified Property_14 and Property_15 as listings with no recorded viewing events.
+
+### Unit 6 — Trends and Window Functions
+
+| Query | Business Question |
+|---|---|
+| `q6_1.sql` | How does each viewing compare with its property's average, how should properties be ranked, and how can they be divided into activity bands? |
+| `q6_2.sql` | How does viewing activity change from event to event and over time, and where do extended gaps in property activity occur? |
+| `q6_3.sql` | What are the top viewing events for each property, and is the platform's cancellation rate improving or worsening month over month? |
+
+Unit 6 uses window functions to preserve individual records while calculating averages, rankings, running totals, moving averages, event-to-event changes, and month-over-month performance.
 
 
 

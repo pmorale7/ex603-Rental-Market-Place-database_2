@@ -65,3 +65,58 @@ SELECT
 FROM daily_viewings
 
 ORDER BY viewing_date;
+
+
+
+-- Task 6.2 - Part B
+-- How is viewing activity changing over time?
+-- Show daily viewing activity, cumulative viewing activity,
+-- a 7-row moving average, and progress toward a target
+-- of 150 total viewing events.
+
+WITH daily_viewings AS (
+    SELECT
+        scheduled_at::date AS viewing_date,
+        COUNT(*) AS daily_viewings
+    FROM viewings
+    GROUP BY scheduled_at::date
+)
+
+SELECT
+    viewing_date,
+    daily_viewings,
+
+    SUM(daily_viewings) OVER (
+        ORDER BY viewing_date
+        ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+    ) AS running_total,
+
+    AVG(daily_viewings) OVER (
+        ORDER BY viewing_date
+        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+    ) AS seven_row_moving_average,
+
+    150 AS target_viewings,
+
+    150 - SUM(daily_viewings) OVER (
+        ORDER BY viewing_date
+        ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+    ) AS viewings_remaining_to_target
+
+FROM daily_viewings
+
+ORDER BY viewing_date;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

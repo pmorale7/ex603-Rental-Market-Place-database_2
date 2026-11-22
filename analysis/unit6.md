@@ -19,6 +19,35 @@ I chose the seven row moving average to smooth out short term changes in viewing
 A gap means a property had no recorded viewing event for a period of time and then viewing activity resumed.   We need to investigate whether the property was unavailable or inactive during that period, whether renters simply scheudled no viewings, or whether viewing records were missing.  therefore, the gap should be treated as an item requiring further invesigation rather than automatically classifield as a platform or data quailty problem.  As I looked at the query again property 9 had 113 days between recorded viewing events.   first on january 5, 2023 and next was April 28, 2023.  
 
 
+## Section 3
+
+
+The top 3 viewing activity report could show the three longest viewing events for each property.  Three of these events provide better information to identify repeated high duration activity without limiting the analysis to a single event that could be usual.  Showing ten events would provide more details but could make the report harder for management to quickly review.  A good top 3 report provides a focused view of the most significant viewing events for each property. 
+
+On a month to month change in the failure rate signals that viewing performance changed significantly and should be investigated further.  The failure increased from 11.76% in May to 25 % in june,   that is an increase of 123%.  Leadership should review the cancelled viewings from that month to determine whether the increase was concentreaed among particular properties or caused by facotrs such as renter cancellations, property withdrawals, or agent availability.  The change identfies when a problem occurrd, but additional analysis is needed to determine the cause. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

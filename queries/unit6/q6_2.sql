@@ -109,7 +109,39 @@ ORDER BY viewing_date;
 
 
 
+-- Task 6.2 - Part C
+-- Which properties had a gap of at least 60 days
+-- between viewing events and then became active again?
 
+WITH viewing_gaps AS (
+    SELECT
+        property_id,
+        viewing_id,
+        scheduled_at,
+
+        LAG(scheduled_at) OVER (
+            PARTITION BY property_id
+            ORDER BY scheduled_at
+        ) AS previous_viewing_at
+
+    FROM viewings
+)
+
+SELECT
+    property_id,
+    viewing_id,
+    previous_viewing_at,
+    scheduled_at AS current_viewing_at,
+
+    scheduled_at::date
+        - previous_viewing_at::date AS gap_days
+
+FROM viewing_gaps
+
+WHERE previous_viewing_at IS NOT NULL
+  AND scheduled_at::date - previous_viewing_at::date >= 60
+
+ORDER BY gap_days DESC;
 
 
 

@@ -134,7 +134,25 @@ In Unit 6, window functions allowed individual viewing events to be analyzed wit
 
 
 
+## Findings and Recommendations
 
+### 1. Some Listings Have High Cancellation Rates
+
+The property-level analysis found meaningful differences in cancellation performance. Property 11 had the highest failure rate among the high-volume properties, with 5 cancelled events out of 16 total viewing events, resulting in a 31.25% failure rate. Property 9 followed at 28.57%, and Property 2 had a 25.00% failure rate.
+
+**Recommendation:** Leadership should investigate the properties with the highest cancellation rates to determine whether cancellations are related to property availability, renter behavior, scheduling, or other operational factors. The SQL identifies where the problems are occurring, but additional information is needed to determine their cause.
+
+### 2. Two Listings Had No Viewing Activity
+
+The outer-join analysis identified Property_14 and Property_15 as listings with no recorded viewing events. These properties appeared when using a `LEFT JOIN` but disappeared from an `INNER JOIN` because there were no matching records in the `viewings` table.
+
+**Recommendation:** These listings should be reviewed separately from high-failure properties. Leadership should verify their availability, pricing, listing visibility, and market interest to determine why they have generated no viewing activity.
+
+### 3. Failure Rates Improved Overall but Remained Unstable
+
+The month-over-month analysis showed that the platform's failure rate decreased from 23.81% in January to 18.75% in December. However, performance was not consistently improving. Failure rates varied substantially during the year, including 27.27% in March, 0.00% in April, 25.00% in June, and 11.11% in October.
+
+**Recommendation:** Leadership should focus next quarter on reducing month-to-month volatility. Large increases in cancellation rates should trigger a review of the affected properties and viewing events so that problems can be identified and addressed before they continue into later months.
 
 
 

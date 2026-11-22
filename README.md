@@ -118,7 +118,19 @@ Unit 5 connected viewing activity with renters, properties, and amenities. It al
 Unit 6 uses window functions to preserve individual records while calculating averages, rankings, running totals, moving averages, event-to-event changes, and month-over-month performance.
 
 
+## Technical Highlights
 
+### 1. Aggregation — Property Failure Rates
+
+In Unit 4, aggregation was used to measure the performance of individual property listings. `COUNT()`, `SUM()`, `CASE`, and `GROUP BY` were combined to count total viewing events and cancelled events for each property. This allowed a failure rate to be calculated for high-volume properties. For example, Property 11 had 16 viewing events, 5 cancelled events, and a 31.25% failure rate. Aggregation was useful because it transformed individual viewing records into property-level performance measures that leadership could compare.
+
+### 2. JOINs — Finding Properties With No Activity
+
+In Unit 5, joins were used to connect property listings with their viewing events. Comparing a `LEFT JOIN` with an `INNER JOIN` revealed that Property_14 and Property_15 existed in the marketplace but had no matching viewing events. The `LEFT JOIN` preserved these properties while the `INNER JOIN` excluded them. This demonstrated why the choice of join matters when building reports: using only an `INNER JOIN` could hide inactive listings and give leadership an incomplete picture of the marketplace.
+
+### 3. Window Functions — Comparing Events With Property Averages
+
+In Unit 6, window functions allowed individual viewing events to be analyzed without collapsing the underlying rows. `AVG(duration_min) OVER (PARTITION BY property_id)` displayed each viewing's duration beside the average duration for that property. The window-function query preserved all 200 viewing events, while the equivalent `GROUP BY` query reduced the results to 13 property-level rows. This made it possible to identify individual viewing events that were unusually long or short compared with the normal activity for their property.
 
 
 

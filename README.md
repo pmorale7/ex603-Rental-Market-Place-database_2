@@ -172,40 +172,43 @@ This project uses PostgreSQL and was developed and tested using pgAdmin.
 
 - PostgreSQL 14 or later
 - pgAdmin or another PostgreSQL client
-- The Unit 3 `ex603_data` dataset
 
-### 1. Create or Load the Database
+### 1. Create the Database
 
-Create the `ex603_data` database in PostgreSQL and load the schema and dataset provided for Unit 3.
+Create a PostgreSQL database for the project and connect to it using pgAdmin.
 
-The analysis in Units 3–6 uses the same database, tables, and data.
+### 2. Run the Schema
 
-### 2. Open a Query Tool
+The database schema is located at:
 
-In pgAdmin:
+`/schema/schema.sql`
 
-1. Connect to the PostgreSQL server.
-2. Select the `ex603_data` database.
-3. Open **Query Tool**.
-4. Open or copy the desired `.sql` file from the `/queries/` directory.
+Open `schema.sql` in the pgAdmin Query Tool and execute the complete script. The schema file creates the database tables and relationships required by the project.
 
-### 3. Run a Query
+### 3. Load the Course Dataset
 
-For example, Unit 6 queries are located in:
+Load the Unit 3 dataset into the database. The analytical queries in Units 3–6 use the same tables and dataset throughout the remainder of the project.
 
-`/queries/unit6/`
+### 4. Run the Analytical Queries
 
-The files include:
+Open the appropriate `.sql` file from the `/queries/` directory in pgAdmin's Query Tool and execute the desired task.
 
-- `q6_1.sql` — window averages, rankings, and activity bands
-- `q6_2.sql` — LAG/LEAD, running totals, moving averages, and activity gaps
-- `q6_3.sql` — Top-N reporting and month-over-month performance
+For example:
 
-Execute the complete query or task section in pgAdmin and review the result set in the Data Output panel.
+`/queries/unit6/q6_1.sql` — window averages, ranking functions, and activity bands
+
+`/queries/unit6/q6_2.sql` — LAG/LEAD analysis, running totals, moving averages, and activity gaps
+
+`/queries/unit6/q6_3.sql` — Top-N reporting and month-over-month performance
+
+The query results will appear in pgAdmin's Data Output panel.
 
 ### Repository Structure
 
 ```text
+schema/
+└── schema.sql
+
 queries/
 ├── unit3/
 ├── unit4/
@@ -222,7 +225,4 @@ screenshots/
 README.md
 ```
 
-The `/queries/` directory contains the SQL analysis, while `/analysis/` contains the interpretation of the results, findings, and recommendations.
-
-
-
+The `/schema/` directory contains the database structure, `/queries/` contains the SQL analysis, `/analysis/` contains the interpretation and recommendations, and `/screenshots/` contains supporting evidence from the executed queries.

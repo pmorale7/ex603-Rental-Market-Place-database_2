@@ -36,6 +36,32 @@ Because the project uses the database structure provided for the course, the SQL
 
 Keeping the original database names ensures that the SQL queries remain consistent with the provided dataset while allowing the analysis to be interpreted within the cargo van rental marketplace theme. 
 
+## Database Overview
+
+The project uses the PostgreSQL relational database provided in Unit 3. The original database table and column names are retained throughout the project so that all SQL queries remain consistent with the provided dataset.
+
+For the Cargo Van Rental Marketplace theme, the generic marketplace terminology is interpreted as follows:
+
+- **`properties`** represents cargo van rental listings. Each listing contains information such as its listing label, location, rental-price field, and availability.
+- **`renters`** represents customers using the marketplace to browse rental vehicle listings.
+- **`viewings`** represents customer interactions with vehicle listings. This table contains the event data used throughout much of the analysis, including viewing duration, scheduled and attended times, viewing status, and the renter and property associated with each event.
+- **`amenities`** represents features or equipment associated with rental vehicle listings.
+- **`listing_amenities`** is the junction table connecting rental vehicle listings to their available features.
+- **`property_features`** contains additional feature information associated with the marketplace listings.
+
+The `viewings` table became the primary event table for the analytical portion of the project. It allowed viewing activity to be measured by property, customer, time, duration, and status. A cancelled viewing was used as the failure metric when analyzing property performance.
+
+The database relationships also made it possible to connect viewing activity with customer information, vehicle-listing information, and amenities. These relationships were used in later units to identify high-failure listings, listings with no activity, differences between properties, and changes in marketplace performance over time.
+
+### Entity Relationship Diagram
+
+The ERD below documents the relationships among the core marketplace tables. Although the database uses the name `properties`, this project interprets those records as cargo van rental listings.
+
+The database structure and DDL were provided as part of the Unit 3 dataset and were used as the foundation for the analytical SQL developed in later units.
+
+
+
+
 **ERD Image Drawio:** 
 
 ![App ex603-Rental-Market-Place-database](schema/rentalMarketERD_2026.png)

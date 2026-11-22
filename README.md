@@ -164,6 +164,65 @@ Future analysis would benefit from additional operational information such as de
 A larger dataset covering a longer period would also make it possible to determine whether the monthly changes identified in this project represent long-term trends or short-term fluctuations.
 
 
+## How to Run the Project
+
+This project uses PostgreSQL and was developed and tested using pgAdmin.
+
+### Requirements
+
+- PostgreSQL 14 or later
+- pgAdmin or another PostgreSQL client
+- The Unit 3 `ex603_data` dataset
+
+### 1. Create or Load the Database
+
+Create the `ex603_data` database in PostgreSQL and load the schema and dataset provided for Unit 3.
+
+The analysis in Units 3–6 uses the same database, tables, and data.
+
+### 2. Open a Query Tool
+
+In pgAdmin:
+
+1. Connect to the PostgreSQL server.
+2. Select the `ex603_data` database.
+3. Open **Query Tool**.
+4. Open or copy the desired `.sql` file from the `/queries/` directory.
+
+### 3. Run a Query
+
+For example, Unit 6 queries are located in:
+
+`/queries/unit6/`
+
+The files include:
+
+- `q6_1.sql` — window averages, rankings, and activity bands
+- `q6_2.sql` — LAG/LEAD, running totals, moving averages, and activity gaps
+- `q6_3.sql` — Top-N reporting and month-over-month performance
+
+Execute the complete query or task section in pgAdmin and review the result set in the Data Output panel.
+
+### Repository Structure
+
+```text
+queries/
+├── unit3/
+├── unit4/
+├── unit5/
+└── unit6/
+
+analysis/
+├── unit5.md
+├── unit5-finding.md
+├── unit6.md
+└── unit6-finding.md
+
+screenshots/
+README.md
+```
+
+The `/queries/` directory contains the SQL analysis, while `/analysis/` contains the interpretation of the results, findings, and recommendations.
 
 
 

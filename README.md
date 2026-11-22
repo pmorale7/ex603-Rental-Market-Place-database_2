@@ -1,19 +1,40 @@
-# Cargo Van Rental Marketplace Database Creation
-**Philip Morales.** \
-**Project Title:** Rental Marketplace. \
-**Database Used:** PostgreSQL with pgAdmin
-Proper ERD platform Used: drawio
+# Rental Marketplace Analytics Project
 
-This project models a relational database for a last mile cargo van rental marketplace that tracks the following items; renters (customer who is going to browse the vehicles to rent), properties (Cargo vans - make & model), viewings (Cargo van availability or listings available), amenities (Cargo van features & equipment), listing_amenities (Junction table - MtM of amenities to vehicle listing), and duration_min (How long a customer view a particular Cargo van on site), which are all part of a property within the marketplace. 
+**Author:** Philip Morales  
+**Database:** PostgreSQL / pgAdmin  
+**Theme:** Cargo Van Rental Marketplace
 
-**Theme:** Rental Marketplace
+## Project Summary
 
-**Domain**\
-The cargo van rental marketplace is where any customers (renters) is able to view all cargo van listing from Ford Transit 150 or 250 and Ram Promasters cargo van from 1500, 2500, and 3500 sizes. The customers is able to explore vehicle listings on site, compare daily rates for each vehicle, and review all possible amenities such as high roofs (depending on sizes), cargo shelves, vehicle safety cameras, interior lights, and any other features available.  The properties table are the cargo van listings for the site.  The amenities table is for all the features available to the site.   
+This project analyzes a Rental Marketplace relational database using PostgreSQL. I adapted the provided marketplace dataset to represent a **cargo van rental platform**, where rental vehicle listings are represented by the database's `properties` table, customers are represented by `renters`, customer interactions with vehicle listings are represented by `viewings`, and vehicle features are represented by `amenities`.
 
-This project records all vehicle viewing done by customers (renters) on the site.  Each renters is able to look through what vehicles are being listed and which ones are available to rent.  Additionally, each customers (renter) is able to see which vehicle is active and available, as some vehicle may be inactive and not available to due to preventative maintenance, mechanical issues or body shop.  These latter items we did not put into the database or use.  All viewing of vehicles within the database is recorded by the utilization of duration_min metric.  This allows for measurement of customer (renters) interest in which vehicle they are looking to rent from our database.  The equivalent of this is bounce rate per vehicle listing measured in minutes. Lastly, even if a vehicle is inactive we kept the vehicle data and did not delete due to its on viewing minutes for historical data. 
+The project progresses from basic database queries to business-focused analytics involving aggregations, joins, common table expressions, query execution plans, and window functions. The primary goal is to understand customer viewing activity, identify vehicle listings with unusually high cancellation rates or no activity, compare listing performance, and determine whether marketplace performance is improving or worsening over time.
 
-The questions the database answers are as follows; which vehicles are active and which are inactive per each listing on the site, it will also show the daily rate for each vehicle being rented, which customers viewed which vehicles, also how long they viewed a particular vehicle.  The database also mentions all amenities each vehicle may have or may not have.  The important part is the viewing history per vehicle by duration_min recorded to see which is more popular than the other.  
+## Domain
+
+The business scenario is a cargo van rental marketplace where customers can browse available vehicle listings before deciding which vehicle to rent. Vehicle listings may represent cargo vans such as Ford Transit or Ram ProMaster models with different prices, locations, availability, and equipment.
+
+The database uses generic Rental Marketplace terminology. For this project, the `properties` table represents **rental vehicle listings**, rather than real-estate properties. The `renters` table represents customers, while the `viewings` table records customer activity involving those listings. The `amenities` table represents features or equipment associated with a vehicle, and `listing_amenities` connects vehicle listings with those features through a many-to-many relationship.
+
+The analytical portion of the project focuses primarily on viewing activity. Viewing duration provides one measure of customer interaction with a listing, while viewing status allows cancelled events to be analyzed as failures. The analysis examines activity by vehicle listing, identifies listings with unusually high failure rates, finds listings with no recorded viewing activity, compares monthly performance, and uses window functions to examine trends over time.
+
+## Database Terminology
+
+Because the project uses the database structure provided for the course, the SQL retains the original table and column names.
+
+| Database Name | Cargo Van Marketplace Meaning |
+|---|---|
+| `properties` | Rental vehicle listings |
+| `renters` | Customers |
+| `viewings` | Customer viewing/interactions with vehicle listings |
+| `amenities` | Vehicle features or equipment |
+| `listing_amenities` | Relationship between vehicles and their features |
+| `property_id` | Vehicle-listing identifier |
+| `property_label` | Vehicle-listing label |
+| `is_available` | Whether the listing is currently available |
+| `city` | Listing/market location |
+
+Keeping the original database names ensures that the SQL queries remain consistent with the provided dataset while allowing the analysis to be interpreted within the cargo van rental marketplace theme. 
 
 **ERD Image Drawio:** 
 

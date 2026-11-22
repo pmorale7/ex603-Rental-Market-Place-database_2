@@ -77,6 +77,17 @@ The database structure and DDL were provided as part of the Unit 3 dataset and w
 
 The SQL analysis developed throughout the course progresses from basic database exploration to performance analysis, joins, execution plans, and window-function reporting.
 
+### Unit 3 — Querying and Validating Marketplace Data
+
+| Query | Business / Analytical Question |
+|---|---|
+| `q3_1.sql` | What properties are available at different price levels, what viewing statuses and customer-interest patterns exist, and how can marketplace data be filtered and categorized? |
+| `q3_2.sql` | How can NULL values and SQL execution order cause unexpected query results, and how can conditions and CTEs be used to correct those problems? |
+| `q3_3.sql` | Which renters have never had a disputed viewing, and how do NOT IN, NOT EXISTS, CTEs, and EXCEPT compare when identifying those renters? |
+
+Unit 3 established the foundation for analyzing the Rental Marketplace dataset. The queries explored properties, renters, viewing activity, pricing, viewing status, duration, interest scores, and missing values. The unit also demonstrated how NULL values can affect query results and compared several approaches for identifying records that do not meet a particular condition.
+
+
 ### Unit 4 — Platform Performance
 
 | Query | Business Question |

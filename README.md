@@ -233,3 +233,9 @@ The `/schema/` directory contains the database structure, `/queries/` contains t
 https://youtu.be/zVpw8Jp0Q1Y
 
 
+## Video Presentation
+
+A 3-5 minute presentation demonstrating the SQL analysis, key findings, and recommendation from the Rental Marketplace project.
+
+Watch the Rental MarketPlace Analytics video
+

@@ -226,3 +226,10 @@ README.md
 ```
 
 The `/schema/` directory contains the database structure, `/queries/` contains the SQL analysis, `/analysis/` contains the interpretation and recommendations, and `/screenshots/` contains supporting evidence from the executed queries.
+
+
+## Video Link
+
+https://youtu.be/zVpw8Jp0Q1Y
+
+
